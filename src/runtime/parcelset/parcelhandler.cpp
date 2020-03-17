@@ -1092,7 +1092,7 @@ namespace hpx { namespace parcelset
               ""
             },
             { "/parcels/count/routed",
-              performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               "returns the number of (outbound) parcel routed through the "
                   "responsible AGAS service",
               HPX_PERFORMANCE_COUNTER_V1,
@@ -1204,7 +1204,7 @@ namespace hpx { namespace parcelset
         performance_counters::generic_counter_type_data const counter_types[] =
         {
             { hpx::util::format("/parcels/count/{}/sent", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               hpx::util::format(
                   "returns the number of parcels sent using the {} "
                   "connection type for the referenced locality", pp_type),
@@ -1223,7 +1223,7 @@ namespace hpx { namespace parcelset
               ""
             },
             { hpx::util::format("/parcels/count/{}/received", pp_type),
-               performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               hpx::util::format(
                   "returns the number of parcels received using the {} "
                   "connection type for the referenced locality", pp_type),
@@ -1242,7 +1242,7 @@ namespace hpx { namespace parcelset
               ""
             },
             { hpx::util::format("/messages/count/{}/sent", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               hpx::util::format(
                   "returns the number of messages sent using the {} "
                   "connection type for the referenced locality", pp_type),
@@ -1253,7 +1253,7 @@ namespace hpx { namespace parcelset
               ""
             },
             { hpx::util::format("/messages/count/{}/received", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               hpx::util::format(
                   "returns the number of messages received using the {} "
                   "connection type for the referenced locality", pp_type),
@@ -1265,7 +1265,7 @@ namespace hpx { namespace parcelset
             },
 
             { hpx::util::format("/data/time/{}/sent", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_elapsed_time,
               hpx::util::format(
                   "returns the total time between the start of each "
                   "asynchronous write and the invocation of the write callback "
@@ -1278,7 +1278,7 @@ namespace hpx { namespace parcelset
               "ns"
             },
             { hpx::util::format("/data/time/{}/received", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_elapsed_time,
               hpx::util::format(
                   "returns the total time between the start of each "
                   "asynchronous read and the invocation of the read callback "
@@ -1291,7 +1291,7 @@ namespace hpx { namespace parcelset
               "ns"
             },
             { hpx::util::format("/serialize/time/{}/sent", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_elapsed_time,
               hpx::util::format(
                   "returns the total time required to serialize all sent "
                   "parcels using the {} connection type for the referenced "
@@ -1311,7 +1311,7 @@ namespace hpx { namespace parcelset
               "ns"
             },
             { hpx::util::format("/serialize/time/{}/received", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_elapsed_time,
               hpx::util::format(
                   "returns the total time required to de-serialize all "
                   "received parcels using the {} connection type for the "
@@ -1332,7 +1332,7 @@ namespace hpx { namespace parcelset
             },
 
             { hpx::util::format("/data/count/{}/sent", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               hpx::util::format(
                   "returns the amount of (uncompressed) parcel argument data "
                   "sent using the {} connection type by the referenced "
@@ -1344,7 +1344,7 @@ namespace hpx { namespace parcelset
               "bytes"
             },
             { hpx::util::format("/data/count/{}/received", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               hpx::util::format(
                   "returns the amount of (uncompressed) parcel argument data "
                   "received using the {} connection type by the referenced "
@@ -1357,7 +1357,7 @@ namespace hpx { namespace parcelset
             },
             { hpx::util::format(
                   "/serialize/count/{}/sent", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               hpx::util::format(
                   "returns the amount of parcel data (including headers, "
                   "possibly compressed) sent using the {} connection type "
@@ -1378,7 +1378,7 @@ namespace hpx { namespace parcelset
             },
             { hpx::util::format(
                   "/serialize/count/{}/received", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_monotonically_increasing,
               hpx::util::format(
                   "returns the amount of parcel data (including headers, "
                   "possibly compressed) received using the {} connection type "
@@ -1399,7 +1399,7 @@ namespace hpx { namespace parcelset
             },
             { hpx::util::format(
                 "/parcels/time/{}/buffer_allocate/received", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_elapsed_time,
               hpx::util::format(
                   "returns the time needed to allocate the buffers for "
                   "serializing using the {} connection type", pp_type),
@@ -1411,7 +1411,7 @@ namespace hpx { namespace parcelset
             },
             { hpx::util::format(
                 "/parcels/time/{}/buffer_allocate/sent", pp_type),
-              performance_counters::counter_raw,
+              performance_counters::counter_elapsed_time,
               hpx::util::format(
                   "returns the time needed to allocate the buffers for "
                   "serializing using the {} connection type", pp_type),
